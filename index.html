@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #0a1a3a, #020617);
+      color: white;
+    }header {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  background: white;
+  color: #0a1a3a;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #020617;
+}
+
+  </style>
+</head>
+<body><header>
+  <h1>My Business Website</h1>
+  <p>Modern dark style website with working buttons</p>
+  <a href="tel:+77000000000" class="btn">📞 Call</a>
+</header><div class="section">
+  <h2>Download Photos</h2>
+  <a href="https://picsum.photos/300" download class="btn">Download Image</a>
+</div><div class="section gallery">
+  <h2>Gallery</h2>
+  <img src="https://picsum.photos/200?1">
+  <img src="https://picsum.photos/200?2">
+  <img src="https://picsum.photos/200?3">
+</div><div class="section">
+  <h2>Add Photo</h2>
+  <input type="file" id="fileInput">
+</div><footer>
+  <p>© 2026 My Business</p>
+</footer><script>
+  document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.style.width = '200px';
+      document.querySelector('.gallery').appendChild(img);
+    }
+  });
+</script></body>
+</html>
